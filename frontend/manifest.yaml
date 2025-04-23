@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: rajesh2219 frontend:v1
+        image: rajesh2219/frontend:v1
         
 ---
 kind: Service 
