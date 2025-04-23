@@ -49,14 +49,18 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: nginx # has to match .spec.template.metadata.labels
+      project: expense
+      component: mysql
+      tier: db # has to match .spec.template.metadata.labels
   serviceName: "mysql-headless"
   replicas: 2 # by default is 1
   
   template:
     metadata:
       labels:
-        app: nginx # has to match .spec.selector.matchLabels
+        project: expense
+        component: mysql
+        tier: db # has to match .spec.selector.matchLabels
     spec:
       
       containers:
@@ -70,7 +74,7 @@ spec:
   - metadata:
       name: mysql
     spec:
-      accessModes: [ "ReadWriteOnce" ]
+      accessModes: [ "ReadWriteOnce"]
       storageClassName: "expense-ebs"
       resources:
         requests:
