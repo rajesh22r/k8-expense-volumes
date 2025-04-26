@@ -37,7 +37,16 @@ spec:
     spec:
       containers:
       - name: backend
-        image: rajesh2219/backend:v1
+        image: rajesh2219/backend:v1resources:
+        requests:
+          cpu: 100m
+          memory: 128Mi
+        limits:
+          cpu: 100m
+          memory: 128Mi
+
+    
+
         envFrom:
         - configMapRef:
            name: backend
